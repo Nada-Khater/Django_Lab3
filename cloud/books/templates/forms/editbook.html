@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %} 
+{% load static %} 
+{% block 'content' %}
+
+<div class="container">
+  <br />
+  <h2>Edit Book: {{ form.instance.name }}</h2>
+  <hr class="my-4" />
+  <form method="post" enctype="multipart/form-data" class="mt-4">
+    {% csrf_token %}
+    {{form}}
+    <input
+      type="submit"
+      value="Submit"
+      class="btn btn-success"
+      style="width: 80px"
+    />
+  </form>
+</div>
+
+<script src="{% static 'books/images/js/script.js' %}"></script>
+
+{% endblock %}

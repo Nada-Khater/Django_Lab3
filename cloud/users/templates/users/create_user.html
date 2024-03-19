@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<hr class="my-4" />
+  <h2>Register Page</h2>
+  <hr class="my-4" />
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" class="btn btn-primary" value="Submit" style="width: auto;">
+</form>
+
+<script src="{% static 'books/images/js/script.js' %}"></script>
+
+{% endblock %}

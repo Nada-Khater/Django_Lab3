@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container">
+    <br><h1 style="text-align: center;" class="display-4">Welcome to our Book Store!</h1>
+    <hr class="my-4">
+    <img src="{% static 'books/images/bookstore.jpg' %}"
+    width="300" height="400"
+    class="card-img-top" alt="...">
+    <hr class="my-4">
+</div>
+
+{% endblock %}

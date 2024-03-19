@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<br><h2> Book Details from DB: </h2>
+<hr class="my-4">
+<div class="card mb-3">
+  <img src="{{book.image_url}}"
+       style="width: 250px; height: 350px;"
+       class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title">{{book.name}}</h4>
+    <hr class="my-4">
+    <p class="card-text"><b>Price:</b> {{book.price}}</p>
+    <p class="card-text"><b>Author:</b> {{book.author}}</p>
+    <p class="card-text"><b>No of Pages:</b> {{book.npages}}</p>
+    <p class="card-text"><b>Created at:</b> {{book.created_at}}.</p>
+    <p class="card-text"><b>Updated at:</b> {{book.updated_at}}.</p>
+    <a href="{% url 'books.index' %}" class="btn btn-primary">Back to All Books</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'layouts/base.html'%}
+{% load static %}
+{% block 'content' %}
+
+<!-- <hr class="my-4"> -->
+<br><h2> Author info </h2>
+<hr class="my-4">
+<div class="card mb-3">
+  <img src="{{author.logo_url}}"
+       width="120" height="300"
+       class="card-img-top" alt="..." style="width: 200px;">
+  <div class="card-body">
+    <h5 class="card-title">{{author.name}}</h5>
+    <hr class="my-4">
+    <!-- <p class="card-text">Created Books: {{books}}.</p> -->
+    <p class="card-text" ><b>Created Books:</b> 
+      {% if author.books.all %}
+          {% for book in author.books.all %}
+              {{ book.name }}{% if not forloop.last %}, {% endif %}
+          {% endfor %}
+      {% else %}
+          No books found
+      {% endif %}
+    </p>
+    <p class="card-text"><b>Birth Date:</b> {{ author.bdate }}</p>
+    <a href="{% url 'authors.index' %}" class="btn btn-primary">Back to All Authors</a>
+  </div>
+</div>
+
+{% endblock %}

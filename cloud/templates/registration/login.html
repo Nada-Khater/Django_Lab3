@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %} 
+{% load static %} 
+{% block 'content' %}
+
+<div class="container">
+  <hr class="my-4" />
+  <h2>Login Page</h2>
+  <hr class="my-4" />
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">{{ form.username.label_tag }} {{ form.username }}</div>
+    <div class="mb-3">{{ form.password.label_tag }} {{ form.password }}</div>
+    <input
+      type="submit"
+      class="btn btn-success"
+      value="Login"
+      style="width: 80px"
+    />
+  </form>
+</div>
+<script src="{% static 'books/images/js/script.js' %}"></script>
+
+{% endblock %}
